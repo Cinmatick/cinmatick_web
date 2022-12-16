@@ -13,14 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('phone_no')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('ticket_id');
+            $table->theatre_id();
+            $table->user_id();
+            $table->show_id();
+            $table->screen_id();
+            $table->seats_number();
+            $table->amount();
+            $table->date('ticket_date');
+            $table->date('date');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -32,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bookings');
     }
 };
