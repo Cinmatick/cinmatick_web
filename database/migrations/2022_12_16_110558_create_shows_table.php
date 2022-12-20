@@ -15,13 +15,14 @@ return new class extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->id();
-            $table->show_time_id();
-            $table->theatre_id();
-            $table->movie_id();
-            $table->date('start_date');
-            $table->boolean('status');
-            $table->boolean('running_status');
-            $table->timestamps();
+            $table->unsignedBigInteger('movie_id');
+            $table->unsignedBigInteger('theatre_id');
+            $table->double('price');
+            $table->string('time');
+            $table->integer('available_seats');
+            // $table->date('start_date');
+            // $table->boolean('running_status');
+            // $table->timestamps();
         });
     }
 

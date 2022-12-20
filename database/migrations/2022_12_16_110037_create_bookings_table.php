@@ -15,17 +15,10 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('ticket_id');
-            $table->theatre_id();
-            $table->user_id();
-            $table->show_id();
-            $table->screen_id();
-            $table->seats_number();
-            $table->amount();
-            $table->date('ticket_date');
-            $table->date('date');
-            $table->boolean('status');
-            $table->timestamps();
+            $table->string('reference');
+            $table->unsignedBigInteger('show_id');
+            $table->unsignedBigInteger('user_id');
+            $table->integer('number_of_seats');
         });
     }
 

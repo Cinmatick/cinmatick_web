@@ -16,11 +16,12 @@ return new class extends Migration
         Schema::create('theatres', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->string('place');
-            $table->string('state');
-            $table->pin();
-            $table->timestamps();
+            $table->integer('capacity');
+            // $table->string('address');
+            // $table->string('place');
+            // $table->string('state');
+            // $table->pin();
+            // $table->timestamps();
         });
     }
 
