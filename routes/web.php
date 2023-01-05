@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
+// route for movies view
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard',[
+        'movies' => Movie::all()
+    ]);
+
 })->middleware(['auth', 'verified'])->name('dashboard');
+// route for single movie view
+Route::get('/dashboard/{id}', function ($id) {
+    return view('movie',[
+        'movie' => Movie::find($id)
+    ]);
+
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 
 Route::middleware('auth')->group(function () {
