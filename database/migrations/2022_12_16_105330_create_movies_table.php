@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Theatre::class);
             $table->string('name');
             $table->string('video_url');
             $table->string('cast');
@@ -24,8 +23,8 @@ return new class extends Migration
             $table->string('released_date');
             $table->string('description');
             $table->string('pg');
-            // $table->string('image');
-            // $table->timestamps();
+            $table->string('image');
+            $table->timestamps();
         });
     }
 
