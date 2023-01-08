@@ -19,6 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('show_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('number_of_seats');
+            $table->timestamps();
         });
     }
 

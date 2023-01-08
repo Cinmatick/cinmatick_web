@@ -19,10 +19,11 @@ return new class extends Migration
             $table->unsignedBigInteger('theatre_id');
             $table->double('price');
             $table->string('time');
+            $table->string('date');
             $table->integer('available_seats');
             // $table->date('start_date');
             // $table->boolean('running_status');
-            // $table->timestamps();
+            $table->timestamps();
         });
     }
 

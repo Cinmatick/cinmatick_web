@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<x-layout>
 
     <h1 class="mt-4">Movies</h1>
     <ol class="breadcrumb mb-4">
@@ -26,6 +25,9 @@
                         <th>Youtube Link</th>
                         <th>PG</th>
                         <th>Released date</th>
+                        <th>Created Date</th>
+                        <th>Updated Date</th>
+                        <th>Actions</th>
 
                     </tr>
                 </thead>
@@ -34,7 +36,7 @@
                     @unless(count($movies) == 0)
                         @foreach ($movies as $movie)
                             <tr>
-                                <td><a href="/dashboard/{{$movie->id}}"><img src="{{asset('images/image1.jpg')}}" alt="" width="100px" height="auto" ></a></td>
+                                <td><a href="/dashboard"><img src="{{asset('storage/'. $movie->image)  }}" alt="" width="100px" height="auto" ></a></td>
                                 {{-- src="{{asset('storage/'.$movie->image)}}" --}}
                                 <td><a href="/dashboard/{{$movie->id}}">{{$movie->name}}</a></td>
                                 <td>{{$movie->cast}}</td>
@@ -43,6 +45,20 @@
                                 <td>{{$movie->video_url}}</td>
                                 <td>{{$movie->pg}}</td>
                                 <td>{{$movie->released_date}}</td>
+                                <td>{{$movie->created_at}}</td>
+                                <td>{{$movie->updated_at}}</td>
+                                <td>
+                                    <a href="/movies/{{ $movie->id}}/edit" class="btn btn-outline-info btn-sm mb-2">
+                                       <i class="fa fa-edit"></i>Edit
+                                   </a>
+                                   <form action="/movies/{{$movie->id}}" class="d-inline" method="POST">
+                                       @csrf
+                                       @method('DELETE')
+                                       <button type="submit" class="btn btn-outline-danger btn-sm">
+                                           <i class="fa fa-trash"></i>Delete
+                                       </button>
+                                   </form>
+                                </td>
                             </tr>
                         @endforeach
                     @else
@@ -55,9 +71,9 @@
         </div>
 
     </div>
+</x-layout>
 
 
 
 
 
-@endsection

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('video_url');
             $table->string('cast');
-            $table->boolean('status');
+            $table->boolean('status')->default(true);
             $table->string('released_date');
             $table->string('description');
             $table->string('pg');

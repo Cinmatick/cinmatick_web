@@ -96,23 +96,26 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/movies/create">Add movie</a>
+                            </nav>
                             <div class="sb-sidenav-menu-heading">Interface</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                theatres
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <a class="nav-link" href="/theatres">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Theatre
                             </a>
-                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
-                                <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="#">add theatre</a>
-                                </nav>
-                            </div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/theatres/create">Add theatre</a>
+                            </nav>
+                            <a class="nav-link" href="/shows">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Shows
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="#">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="/shows/create">Add Show</a>
+                            </nav>
+
+                            <a class="nav-link" href="/bookings">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Bookings
                             </a>
@@ -129,10 +132,11 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
+                <x-flash-message/>
                 <main>
                     <div class="container-fluid px-4">
 
-                        @yield('content')
+                        {{$slot}}
 
                     </div>
                 </main>
@@ -164,6 +168,7 @@
         <script src="{{ asset('js/scripts.js') }}"></script>
         <script src="{{ asset('js/scripts2.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="//unpkg.com/alpinejs" defer></script>
         <!-- Core theme JS-->
 
     </body>

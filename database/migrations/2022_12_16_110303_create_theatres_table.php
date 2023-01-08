@@ -21,7 +21,7 @@ return new class extends Migration
             // $table->string('place');
             // $table->string('state');
             // $table->pin();
-            // $table->timestamps();
+             $table->timestamps();
         });
     }
 
