@@ -15,9 +15,12 @@ return new class extends Migration
     {
         Schema::create('shows', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('movie_id');
-            $table->unsignedBigInteger('theatre_id');
-            $table->double('price');
+           // $table->unsignedBigInteger('movie_id');
+           // $table->unsignedBigInteger('theatre_id');
+           $table->foreignId('movie_id')->constrained()->onDelete('cascade');
+           $table->foreignId('theatre_id')->constrained()->onDelete('cascade');
+
+           $table->double('price');
             $table->string('time');
             $table->string('date');
             $table->integer('available_seats');

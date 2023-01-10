@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Theatre extends Model
+class Category extends Model
 {
     use HasFactory;
-
-    //relationship with shows
-    public function show(){
-        return $this->hasMany(Shows::class, 'theatre_id');
+    public function movie(){
+        return $this->hasMany(Movie::class, 'category_id');
     }
 }

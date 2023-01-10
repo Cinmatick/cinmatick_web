@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->string('reference');
-            $table->unsignedBigInteger('show_id');
-            $table->unsignedBigInteger('user_id');
-            $table->integer('number_of_seats');
-            $table->timestamps();
+        Schema::table('movies', function (Blueprint $table) {
+            //
         });
     }
 
@@ -30,6 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bookings');
+        Schema::table('movies', function (Blueprint $table) {
+            //adding category id column to users
+            $table->foreignId('categories_id')->constrained()->onDelete('cascade');
+        });
     }
 };

@@ -22,6 +22,7 @@
                         <th>Show id</th>
                         <th>User id</th>
                         <th>Number of Seats</th>
+                        <th>Date </th>
 
 
 
@@ -35,9 +36,10 @@
 
                                 <td>{{$booking->id}}</td>
                                 <td>{{$booking->reference}}</td>
-                                <td>{{$booking->show_id}}</td>
-                                <td>{{$booking->user_id}}</td>
+                                <td>{{$booking->shows_id}}</td>
+                                <td>{{$booking->users_id}}</td>
                                 <td>{{$booking->number_of_seats}}</td>
+                                <td>{{$booking->created_at}}</td>
 
                             </tr>
                         @endforeach

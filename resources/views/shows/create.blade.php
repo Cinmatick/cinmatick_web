@@ -16,8 +16,13 @@
         <form action="/shows/store" method="post" >
             @csrf
             <div class="form-group mb-3 ">
-                <label for="movie_id">Movie id</label>
-                <input type="text" name="movie_id" id="movie_id" class="form-control" value="{{old('movie_id')}}">
+                <label for="movie_id">Movie</label>
+                <select name="movie_id" id="movie_id" class="form-select mb-3">
+                    <option value="{{old('movie_id')}}">Select Movie</option>
+                    @foreach ($movies as $movie)
+                    <option value="{{$movie->id}}">{{$movie->name}}</option>
+                    @endforeach
+                </select>
                 @error('movie_id') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -26,8 +31,14 @@
 
 
             <div class="form-group mb-3 ">
-                <label for="theatre_id">Theatre id</label>
-                <input type="text" name="theatre_id" id="theatre_id" class="form-control" value="{{old('theatre_id')}}">
+                <label for="theatre_id">Theatre</label>
+                <select name="theatre_id" id="theatre_id" class="form-select mb-3">
+                    <option value="{{old('theatre_id')}}">Select Movie</option>
+                    @foreach ($theatres as $theatre)
+                    <option value="{{$theatre->id}}">{{$theatre->name}}</option>
+                    @endforeach
+                </select>
+
                 @error('theatre_id') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -57,14 +68,14 @@
                 </span>
                 @enderror
             </div>
-            <div class="form-group mb-3 ">
+            {{-- <div class="form-group mb-3 ">
                 <label for="available_seats">Available Seats</label>
                 <input type="text" name="available_seats" id="available_seats" class="form-control" value="{{old('available_seats')}}">
                 @error('available_seats') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
                 @enderror
-            </div>
+            </div> --}}
 
 
             <button type="submit" class="btn btn-outline-primary w-100">Add Shows</button>

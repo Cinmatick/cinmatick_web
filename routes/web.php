@@ -33,40 +33,40 @@ Route::get('/', function () {
 // route for movies view
 Route::get('/dashboard', [MovieController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 // route for showing create movie view
-Route::get('/movies/create', [MovieController::class, 'create'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/movies/create', [MovieController::class, 'create'])->middleware(['auth', 'verified']);
 //route for storing movie
-Route::post('/movies/store', [MovieController::class, 'store'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/movies/store', [MovieController::class, 'store'])->middleware(['auth', 'verified']);
 //route for showing  edit movie view
-Route::get('/movies/{movie}/edit', [MovieController::class, 'edit'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/movies/{movie}/edit', [MovieController::class, 'edit'])->middleware(['auth', 'verified']);
 //route for movie update
-Route::put('/movies/{movie}', [MovieController::class, 'update'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::put('/movies/{movie}', [MovieController::class, 'update'])->middleware(['auth', 'verified']);
 //delete movie
-Route::delete('/movies/{movie}', [MovieController::class, 'destroy'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::delete('/movies/{movie}', [MovieController::class, 'destroy'])->middleware(['auth', 'verified']);
 
 //for theatres view
-Route::get('/theatres', [TheatreController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/theatres', [TheatreController::class, 'index'])->middleware(['auth', 'verified']);
 //for showing create theatre view
-Route::get('/theatres/create', [TheatreController::class, 'create'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/theatres/create', [TheatreController::class, 'create'])->middleware(['auth', 'verified']);
 //route for storing theatre
-Route::post('/theatres/store', [TheatreController::class, 'store'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/theatres/store', [TheatreController::class, 'store'])->middleware(['auth', 'verified']);
 //route for showing edit theatre view
-Route::get('/theatres/{theatre}/edit', [TheatreController::class, 'edit'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/theatres/{theatre}/edit', [TheatreController::class, 'edit'])->middleware(['auth', 'verified']);
 //route for updating theatre
-Route::put('/theatres/{theatre}', [TheatreController::class, 'update'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::put('/theatres/{theatre}', [TheatreController::class, 'update'])->middleware(['auth', 'verified']);
 //route for deleting theatre
-Route::delete('/theatres/{theatre}', [TheatreController::class, 'destroy'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::delete('/theatres/{theatre}', [TheatreController::class, 'destroy'])->middleware(['auth', 'verified']);
 
 
 // route for Shows view
-Route::get('/shows',[ShowsController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/shows/create',[ShowsController::class, 'create'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::post('/shows/store',[ShowsController::class, 'store'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/shows/{show}/edit',[ShowsController::class, 'edit'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::put('/shows/{show}',[ShowsController::class, 'update'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::delete('/shows/{show}',[ShowsController::class, 'destroy'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/shows',[ShowsController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('/shows/create',[ShowsController::class, 'create'])->middleware(['auth', 'verified']);
+Route::post('/shows/store',[ShowsController::class, 'store'])->middleware(['auth', 'verified']);
+Route::get('/shows/{show}/edit',[ShowsController::class, 'edit'])->middleware(['auth', 'verified']);
+Route::put('/shows/{show}',[ShowsController::class, 'update'])->middleware(['auth', 'verified']);
+Route::delete('/shows/{show}',[ShowsController::class, 'destroy'])->middleware(['auth', 'verified']);
 
 // route for Bookings view
-Route::get('/bookings',[BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/bookings',[BookingController::class, 'index'])->middleware(['auth', 'verified']);
 
 
 

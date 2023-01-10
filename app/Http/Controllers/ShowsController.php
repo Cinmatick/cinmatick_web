@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Models\Shows;
+use App\Models\Theatre;
 use Illuminate\Http\Request;
 
 class ShowsController extends Controller
@@ -15,7 +17,12 @@ class ShowsController extends Controller
     }
     //show create movie form
     public function create() {
-        return view('shows.create');
+        $movies = Movie::where('status',1)->get(['id','name']);
+        $theatres = Theatre::get(['id','name']);
+        return view('shows.create',[
+            'movies' => $movies,
+            'theatres' => $theatres
+        ]);
 
     }
         // store Shows  data
@@ -25,11 +32,12 @@ class ShowsController extends Controller
                 'theatre_id' => 'required',
                 'price' => 'required',
                 'time' => 'required',
-                'available_seats' => 'required',
+                //'available_seats' => 'required',
                 'date' => 'required'
 
             ]);
-
+            $capacity =Theatre::where('id',$request->theatre_id)->first('capacity');
+            $formFields['available_seats'] = $capacity->capacity;
 
             Shows::create($formFields );
             //session()->flash('success', 'Shows    created successfully');
@@ -46,9 +54,11 @@ class ShowsController extends Controller
                 'theatre_id' => 'required',
                 'price' => 'required',
                 'time' => 'required',
-                'available_seats' => 'required',
+                // 'available_seats' => 'required',
                 'date' => 'required'
             ]);
+            //adding connecting the available seats column to theatre capacity
+            $formFields['available_seats'] = Theatre::where('id','theatre_id')->get('capacity');
 
             $show->update($formFields );
         //session()->flash('success', 'Shows    created successfully');
