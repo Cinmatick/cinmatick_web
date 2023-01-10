@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
            // $table->unsignedBigInteger('movie_id');
            // $table->unsignedBigInteger('theatre_id');
-           $table->foreignId('movie_id')->constrained()->onDelete('cascade');
-           $table->foreignId('theatre_id')->constrained()->onDelete('cascade');
+           $table->foreignId('movie_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+           $table->foreignId('theatre_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 
            $table->double('price');
             $table->string('time');

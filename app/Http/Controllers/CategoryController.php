@@ -14,7 +14,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
+        return view('categories.index',[
+            'categories' => Category::all()
+        ]);
         //
+
     }
 
     /**
@@ -24,6 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
+        return view('categories.create');
         //
     }
 
@@ -35,7 +40,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formFields = $request->validate([
+            'name' => ['required', 'unique:movies' ],
+
+        ]);
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('images','public');
+        };
+
+
+
+
+        Category::create(  $formFields  );
+        //session()->flash('success', 'Movie   created successfully');
+        return redirect('categories')->with('message', 'Category created succesfuly');
     }
 
     /**
@@ -57,7 +75,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', ['category' =>$category]);
     }
 
     /**
@@ -69,7 +87,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $formFields = $request->validate([
+            'name' => 'required',
+
+        ]);
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('images','public');
+        };
+
+
+
+
+        //Category::update(  $formFields  );
+        $category->update($formFields);
+        //session()->flash('success', 'Movie   created successfully');
+        return back()->with('message', 'Category created succesfuly');
     }
 
     /**
@@ -81,5 +113,9 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        $category->delete();
+        return redirect('categories')->with('message', 'Category deleted succefully');
     }
-}
+
+ }
+

@@ -17,6 +17,8 @@ return new class extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('categories_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+
             //$table->foreignId('categories_id')->constrained()->onDelete('cascade');
             $table->string('video_url');
             $table->string('cast');
@@ -25,6 +27,7 @@ return new class extends Migration
             $table->string('released_date');
             $table->string('description');
             $table->string('pg');
+            $table->integer('rating')->default(5);
             $table->string('image');
             $table->timestamps();
         });

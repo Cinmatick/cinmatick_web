@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -18,13 +19,16 @@ class MovieFactory extends Factory
     {
         return [
             'name' => fake()->sentence(),
+            'categories_id' => Category::factory(1)->create()[0]->id,
             'video_url' => fake()->unique()->url(),
             'cast' => 'Vandan, Pete Edochie, Omotala',
             'status' => true,
-            'released_date' => '12/03/2005',
+            'trending' => true,
+            'released_date' => fake()->date(),
             'description' => fake()->paragraph(2),
             'image' => 'images/movie1.png',
             'pg' => 'PG-18',
+            'rating' => 5
         ];
     }
 }

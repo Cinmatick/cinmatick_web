@@ -99,6 +99,13 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="/movies/create">Add movie</a>
                             </nav>
+                            <a class="nav-link" href="{{route('categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Categories
+                            </a>
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{route('categories.create')}}">Add Category</a>
+                            </nav>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link" href="/theatres">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

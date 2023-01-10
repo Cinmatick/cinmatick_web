@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
@@ -68,6 +69,8 @@ Route::delete('/shows/{show}',[ShowsController::class, 'destroy'])->middleware([
 // route for Bookings view
 Route::get('/bookings',[BookingController::class, 'index'])->middleware(['auth', 'verified']);
 
+//route for categories
+Route::resource('categories', CategoryController::class)->middleware('auth');
 
 
 

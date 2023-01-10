@@ -36,6 +36,7 @@ class MovieController extends Controller
         };
 
         $formFields['status'] = $request->status == 'on' ? 1 : 0;
+        $formFields['trending'] = $request->status == 'on' ? 1 : 0;
 
 
         Movie::create(
@@ -67,6 +68,7 @@ class MovieController extends Controller
     };
 
     $formFields['status'] = $request->status == 'on' ? 1 : 0;
+    $formFields['trending'] = $request->status == 'on' ? 1 : 0;
 
 
     $movie->update(
