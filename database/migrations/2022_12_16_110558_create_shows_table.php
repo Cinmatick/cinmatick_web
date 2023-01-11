@@ -21,8 +21,8 @@ return new class extends Migration
            $table->foreignId('theatre_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
 
            $table->double('price');
-            $table->string('time');
-            $table->string('date');
+            $table->time('time');
+            $table->date('date');
             $table->integer('available_seats');
             // $table->date('start_date');
             // $table->boolean('running_status');

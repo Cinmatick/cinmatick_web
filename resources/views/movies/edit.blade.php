@@ -25,6 +25,20 @@
             @enderror
         </div>
         <div class="form-group mb-3 ">
+            <label for="category_id">Category</label>
+            <select name="category_id" id="category_id" class="form-select mb-3">
+                <option value="{{$movie->category_id}}">{{$movie->category->name}}</option>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+            </select>
+
+            @error('category_id') <span style="font-size: 10px" class="text-danger">
+            {{$message}}
+            </span>
+            @enderror
+        </div>
+        <div class="form-group mb-3 ">
             <label for="video_url">Youtube link</label>
             <input type="text" name="video_url" id="video_url" class="form-control" value="{{$movie->video_url}}">
             @error('video_url') <span style="font-size: 10px" class="text-danger">
@@ -41,9 +55,17 @@
             @enderror
         </div>
         <div class=" form-group form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="status" name="status" value="{{$movie->status}}"   >
+            <input class="form-check-input" type="checkbox" id="status" name="status"    >
             <label class="form-check-label" for="status">Status</label>
             @error('status') <span style="font-size: 10px" class="text-danger">
+                {{$message}}
+                </span>
+                @enderror
+        </div>
+        <div class=" form-group form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="trending" name="trending"   >
+            <label class="form-check-label" for="trending">Trending</label>
+            @error('trending') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
                 @enderror

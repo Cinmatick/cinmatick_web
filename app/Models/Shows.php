@@ -11,15 +11,15 @@ class Shows extends Model
 
     //relationship wit bookings
     public function bookings(){
-        return $this->hasMany(Bookings::class, 'shows_id');
+        return $this->hasMany(Bookings::class);
     }
 
     //relationship to movie
     public function movie(){
-        return $this->belongsTo(Movie::class, 'movie_id');
+        return $this->belongsTo(Movie::class);
     }
     //relationship to theatre
     public function theatre(){
-        return $this->belongsTo(Theatre::class, 'theatre_id');
+        return $this->belongsTo(Theatre::class);
     }
 }

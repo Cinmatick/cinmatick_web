@@ -18,10 +18,11 @@
                 <tr>
 
                     <th>Id</th>
-                    <th>Movie id</th>
-                    <th>Theatre id</th>
+                    <th>Movie </th>
+                    <th>Theatre </th>
                     <th>Price</th>
                     <th>Time</th>
+                    <th>Show Date</th>
                     <th>Available Seats</th>
                     <th>Created Date</th>
                     <th>Upadated Date</th>
@@ -38,10 +39,11 @@
                         <tr>
 
                             <td>{{$show->id}}</td>
-                            <td>{{$show->movie_id}}</td>
-                            <td>{{$show->theatre_id}}</td>
+                            <td>{{$show->movie->name}}</td>
+                            <td>{{$show->theatre->name}}</td>
                             <td>{{$show->price}}</td>
                             <td>{{$show->time}}</td>
+                            <td>{{$show->date}}</td>
                             <td>{{$show->available_seats}}</td>
                             <td>{{$show->created_at}}</td>
                             <td>{{$show->updated_at}}</td>

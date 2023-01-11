@@ -19,6 +19,7 @@
 
                     <th>Id</th>
                     <th>Name</th>
+                    <th>Image</th>
                     <th>Capacity</th>
                     <th>Date created</th>
                     <th>Date Updated</th>
@@ -35,6 +36,7 @@
 
                             <td>{{$theatre->id}}</td>
                             <td>{{$theatre->name}}</td>
+                            <td><img src="{{asset('storage/'. $theatre->image)  }}" alt="" width="100px" height="auto" ></td>
                             <td>{{$theatre->capacity}}</td>
                             <td>{{$theatre->created_at}}</td>
                             <td>{{$theatre->updated_at}}</td>

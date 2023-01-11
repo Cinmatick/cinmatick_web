@@ -11,6 +11,6 @@ class Theatre extends Model
 
     //relationship with shows
     public function show(){
-        return $this->hasMany(Shows::class, 'theatre_id');
+        return $this->hasMany(Shows::class, );
     }
 }

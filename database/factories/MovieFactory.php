@@ -19,7 +19,7 @@ class MovieFactory extends Factory
     {
         return [
             'name' => fake()->sentence(),
-            'categories_id' => Category::factory(1)->create()[0]->id,
+            'category_id' => Category::factory(1)->create()[0]->id,
             'video_url' => fake()->unique()->url(),
             'cast' => 'Vandan, Pete Edochie, Omotala',
             'status' => true,

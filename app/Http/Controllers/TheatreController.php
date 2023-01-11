@@ -27,6 +27,10 @@ class TheatreController extends Controller
             'capacity' => 'required',
 
         ]);
+        
+        if($request->hasFile('image')){
+            $formFields['image'] = $request->file('image')->store('images','public');
+        };
 
 
         Theatre::create($formFields );
@@ -42,7 +46,12 @@ class TheatreController extends Controller
         $formFields = $request->validate([
         'name' => 'required',
         'capacity' => 'required',]);
-        
+
+        //storing image
+    if($request->hasFile('image')){
+        $formFields['image'] = $request->file('image')->store('images','public');
+    };
+
         $theatre->update($formFields );
     //session()->flash('success', 'theatre    created successfully');
     return back()->with('message', 'Theatre updated succesfuly');

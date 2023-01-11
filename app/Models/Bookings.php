@@ -11,10 +11,10 @@ class Bookings extends Model
 
     //relationship to user
     public function user(){
-        return $this->belongsTo(User::class, 'users_id');
+        return $this->belongsTo(User::class, );
     }
     //relationship to shows
     public function show(){
-        return $this->belongsTo(Shows::class, 'shows_id');
+        return $this->belongsTo(Shows::class, );
     }
 }

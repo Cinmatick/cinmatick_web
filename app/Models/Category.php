@@ -9,6 +9,6 @@ class Category extends Model
 {
     use HasFactory;
     public function movie(){
-        return $this->hasMany(Movie::class, 'category_id');
+        return $this->hasMany(Movie::class);
     }
 }

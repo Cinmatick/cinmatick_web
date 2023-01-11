@@ -33,7 +33,7 @@
             <div class="form-group mb-3 ">
                 <label for="theatre_id">Theatre</label>
                 <select name="theatre_id" id="theatre_id" class="form-select mb-3">
-                    <option value="{{old('theatre_id')}}">Select Movie</option>
+                    <option value="{{old('theatre_id')}}">Select Theatre</option>
                     @foreach ($theatres as $theatre)
                     <option value="{{$theatre->id}}">{{$theatre->name}}</option>
                     @endforeach
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group mb-3 ">
                 <label for="time">Show time</label>
-                <input type="text" name="time" id="time" class="form-control" value="{{old('time')}}">
+                <input type="time" name="time" id="time" class="form-control" value="{{old('time')}}">
                 @error('time') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -62,7 +62,7 @@
             </div>
             <div class="form-group mb-3 ">
                 <label for="date">Show date</label>
-                <input type="text" name="date" id="date" class="form-control" value="{{old('date')}}">
+                <input type="date" name="date" id="date" class="form-control" value="{{old('date')}}">
                 @error('date') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>

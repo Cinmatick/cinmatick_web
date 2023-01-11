@@ -9,13 +9,13 @@ class Movie extends Model
 {
     use HasFactory;
     //protected $fillable =['name','video_url ','cast', 'status', 'released_date', 'description', 'pg', ];
-
+    protected $guarded = ['id'];
     //relationship wit shows
     public function show(){
-        return $this->hasMany(Shows::class, 'movie_id');
+        return $this->hasMany(Shows::class);
     }
 
     public function category(){
-        return $this->hasMany(Category::class, 'category_id');
+        return $this->belongsTo(Category::class);
     }
 }

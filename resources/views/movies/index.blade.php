@@ -19,11 +19,14 @@
 
                         <th>Image</th>
                         <th>Name</th>
+                        <th>Category</th>
                         <th>Cast</th>
                         <th>Description</th>
                         <th>Status</th>
+                        <th>Trending</th>
                         <th>Youtube Link</th>
                         <th>PG</th>
+                        <th>Movie Rating</th>
                         <th>Released date</th>
                         <th>Created Date</th>
                         <th>Updated Date</th>
@@ -36,14 +39,19 @@
                     @unless(count($movies) == 0)
                         @foreach ($movies as $movie)
                             <tr>
-                                <td><a href="/dashboard"><img src="{{asset('storage/'. $movie->image)  }}" alt="" width="100px" height="auto" ></a></td>
+                                <td><a href="/movies/{{ $movie->id}}/edit"><img src="{{asset('storage/'. $movie->image)  }}" alt="" width="100px" height="auto" ></a></td>
                                 {{-- src="{{asset('storage/'.$movie->image)}}" --}}
-                                <td><a href="/dashboard/{{$movie->id}}">{{$movie->name}}</a></td>
+                                <td>{{$movie->name}}"</td>
+                                 <td>{{$movie->category->name}}</td>
+
                                 <td>{{$movie->cast}}</td>
                                 <td>{{$movie->description}}</td>
                                 <td>{{$movie->status}}</td>
+                                <td>{{$movie->trending}}</td>
                                 <td>{{$movie->video_url}}</td>
                                 <td>{{$movie->pg}}</td>
+                                <td>{{$movie->rating}}</td>
+
                                 <td>{{$movie->released_date}}</td>
                                 <td>{{$movie->created_at}}</td>
                                 <td>{{$movie->updated_at}}</td>

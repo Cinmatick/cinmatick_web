@@ -14,7 +14,7 @@
         </header>
         <x-alerts />
 
-        <form action="/theatres/{{$theatre->id}}" method="post" >
+        <form action="/theatres/{{$theatre->id}}" method="post" enctype="multipart/form-data" >
             @csrf
             @method('PUT')
             <div class="form-group mb-3 ">
@@ -31,6 +31,15 @@
                 <label for="capacity">Capacity</label>
                 <input type="text" name="capacity" id="capacity" class="form-control" value="{{$theatre->capacity}}">
                 @error('capacity') <span style="font-size: 10px" class="text-danger">
+                {{$message}}
+                </span>
+                @enderror
+            </div>
+            <div class="form-group mb-3">
+                <label for="image">Image</label>
+               <input type="file" name="image" id="image" class="form-control">
+               <img src="{{asset('storage/'. $theatre->image)}}" class="img-thumbnail" alt="" width="100px" height="auto" >
+               @error('image') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
                 @enderror

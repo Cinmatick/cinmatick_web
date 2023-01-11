@@ -17,8 +17,13 @@
             @csrf
             @method('PUT')
             <div class="form-group mb-3 ">
-                <label for="movie_id">Movie id</label>
-                <input type="text" name="movie_id" id="movie_id" class="form-control" value="{{$show->movie_id}}">
+                <label for="movie_id">Movie</label>
+                <select name="movie_id" id="movie_id" class="form-select mb-3">
+                    <option value="{{$show->movie_id}}">{{$show->movie->name}}</option>
+                    @foreach ($movies as $movie)
+                    <option value="{{$movie->id}}">{{$movie->name}}</option>
+                    @endforeach
+                </select>
                 @error('movie_id') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -27,8 +32,14 @@
 
 
             <div class="form-group mb-3 ">
-                <label for="theatre_id">Theatre id</label>
-                <input type="text" name="theatre_id" id="theatre_id" class="form-control" value="{{$show->theatre_id}}">
+                <label for="theatre_id">Theatre</label>
+                <select name="theatre_id" id="theatre_id" class="form-select mb-3">
+                    <option value="{{$show->theatre_id}}">{{$show->theatre->name}}</option>
+                    @foreach ($theatres as $theatre)
+                    <option value="{{$theatre->id}}">{{$theatre->name}}</option>
+                    @endforeach
+                </select>
+
                 @error('theatre_id') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -44,7 +55,7 @@
             </div>
             <div class="form-group mb-3 ">
                 <label for="time">Show time</label>
-                <input type="text" name="time" id="time" class="form-control" value="{{$show->time}}">
+                <input type="time" name="time" id="time" class="form-control" value="{{$show->time}}">
                 @error('time') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
@@ -52,20 +63,13 @@
             </div>
             <div class="form-group mb-3 ">
                 <label for="date">Show date</label>
-                <input type="text" name="date" id="date" class="form-control" value="{{$show->date}}">
+                <input type="date" name="date" id="date" class="form-control" value="{{$show->date}}">
                 @error('date') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
                 @enderror
             </div>
-            <div class="form-group mb-3 ">
-                <label for="available_seats">Available Seats</label>
-                <input type="text" name="available_seats" id="available_seats" class="form-control" value="{{$show->available_seats}}">
-                @error('available_seats') <span style="font-size: 10px" class="text-danger">
-                {{$message}}
-                </span>
-                @enderror
-            </div>
+
 
 
             <button type="submit" class="btn btn-outline-primary w-100">Update Shows</button>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -11,16 +12,18 @@ class MovieController extends Controller
     //show all movies
     public function index() {
         return view('movies.index',[
-            'movies' => Movie::all()
+            'movies' => Movie::with('category')->get()
         ]);
     }
     //show create movie form
     public function create() {
-        return view('movies.create');
+        $categories = Category::get(['id','name']);
+        return view('movies.create', ['categories' => $categories]);
 
     }
     // store movie data
     public function store(Request $request) {
+
         $formFields = $request->validate([
             'name' => ['required', 'unique:movies' ],
             'video_url' => 'required',
@@ -29,14 +32,17 @@ class MovieController extends Controller
             'released_date' => 'required',
             'description' => 'required',
             'pg' => 'required',
+            'category_id'=> 'required',
 
         ]);
+        $formFields['status'] = $request->status == 'on' ? 1 : 0;
+        $formFields['trending'] = $request->trending == 'on' ? 1 : 0;
+        //storing image
         if($request->hasFile('image')){
             $formFields['image'] = $request->file('image')->store('images','public');
         };
 
-        $formFields['status'] = $request->status == 'on' ? 1 : 0;
-        $formFields['trending'] = $request->status == 'on' ? 1 : 0;
+
 
 
         Movie::create(
@@ -49,7 +55,8 @@ class MovieController extends Controller
     }
     //show Edit form
     public function edit(Movie $movie ){
-        return view('movies.edit', ['movie' =>$movie]);
+        $categories = Category::get(['id','name']);
+        return view('movies.edit', ['movie' =>$movie, 'categories' => $categories]);
     }
 // update movie data
     public function update(Request $request, Movie $movie ) {
@@ -61,23 +68,22 @@ class MovieController extends Controller
         'released_date' => 'required',
         'description' => 'required',
         'pg' => 'required',
+        'category_id'=> 'required',
 
     ]);
+    $formFields['status'] = $request->status == 'on' ? 1 : 0;
+    $formFields['trending'] = $request->trending == 'on' ? 1 : 0;
+    //storing image
     if($request->hasFile('image')){
         $formFields['image'] = $request->file('image')->store('images','public');
     };
 
-    $formFields['status'] = $request->status == 'on' ? 1 : 0;
-    $formFields['trending'] = $request->status == 'on' ? 1 : 0;
 
 
-    $movie->update(
 
-        $formFields
-
-    );
+    $movie->update($formFields);
     //session()->flash('success', 'Movie   created successfully');
-    return back()->with('message', 'Movie updated succesfuly');
+    return redirect('/dashboard')->with('message', 'Movie updated succesfuly');
     }
 // delete movie
     public function destroy(Movie $movie){

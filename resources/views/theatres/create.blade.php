@@ -13,7 +13,7 @@
         </header>
         <x-alerts />
 
-        <form action="/theatres/store" method="post" >
+        <form action="/theatres/store" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-3 ">
                 <label for="name">Name</label>
@@ -29,6 +29,14 @@
                 <label for="capacity">Capacity</label>
                 <input type="text" name="capacity" id="capacity" class="form-control" value="{{old('capacity')}}">
                 @error('capacity') <span style="font-size: 10px" class="text-danger">
+                {{$message}}
+                </span>
+                @enderror
+            </div>
+            <div class="form-group mb-3">
+                <label for="image">Image</label>
+               <input type="file" name="image" id="image" class="form-control">
+               @error('image') <span style="font-size: 10px" class="text-danger">
                 {{$message}}
                 </span>
                 @enderror
