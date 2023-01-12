@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ShowsController;
 use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
@@ -29,6 +30,9 @@ Route::post('/logout',  [AuthController::class,  'logout'])->middleware('auth:sa
 
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('home', [HomeController::class, 'index']);
+    Route::get('now_showing', [ShowsController::class, 'index']);
+    Route::get('/movie/search/{name}', [ShowsController::class, 'search']);
+
 });
 
 
