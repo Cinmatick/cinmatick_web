@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\Api\RegisterController;
+use App\Http\Controllers\Api\ShowsController;
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+// Public routes
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+
+Route::post('/logout',  [AuthController::class,  'logout'])->middleware('auth:sanctum');
+
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('home', [HomeController::class, 'index']);
+    Route::get('now_showing', [ShowsController::class, 'index']);
+    Route::get('/movie/search/{name}', [ShowsController::class, 'search']);
+
 });
 
-Route::post('register', RegisterController::class);
-Route::post('login', RegisterController::class);
+
+
