@@ -8,6 +8,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowsController;
 use App\Http\Controllers\TheatreController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +69,7 @@ Route::delete('/shows/{show}',[ShowsController::class, 'destroy'])->middleware([
 
 // route for Bookings view
 Route::get('/bookings',[BookingController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('/users',[UserController::class, 'index'])->middleware(['auth', 'verified']);
 
 //route for categories
 Route::resource('categories', CategoryController::class)->middleware('auth');

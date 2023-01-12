@@ -8,7 +8,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Shows
+        Users
     </div>
 </div>
 <div class="card-body">
@@ -36,11 +36,11 @@
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->phone_no}}</td>
-                           
+
                     @endforeach
                 @else
                 <tr>
-                    <td colspan="6" class="text-center text-muted">No Shows found</td>
+                    <td colspan="6" class="text-center text-muted">No Users found</td>
                 </tr>
                 @endunless
             </tbody>

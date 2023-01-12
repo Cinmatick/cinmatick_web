@@ -19,7 +19,7 @@ return new class extends Migration
            // $table->unsignedBigInteger('theatre_id');
            $table->foreignId('movie_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
            $table->foreignId('theatre_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-
+           $table->boolean('status')->default(true);
            $table->double('price');
             $table->time('time');
             $table->date('date');

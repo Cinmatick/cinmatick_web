@@ -44,6 +44,14 @@
                 </span>
                 @enderror
             </div>
+            <div class=" form-group form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="status" name="status"  checked >
+                <label class="form-check-label" for="status">Status</label>
+                @error('status') <span style="font-size: 10px" class="text-danger">
+                    {{$message}}
+                    </span>
+                    @enderror
+            </div>
             <div class="form-group mb-3 ">
                 <label for="price">Price</label>
                 <input type="text" name="price" id="price" class="form-control" value="{{old('price')}}">

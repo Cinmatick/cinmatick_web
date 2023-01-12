@@ -36,6 +36,8 @@ class ShowsController extends Controller
                 'date' => 'required'
 
             ]);
+            $formFields['status'] = $request->status == 'on' ? 1 : 0;
+
             $capacity =Theatre::where('id',$request->theatre_id)->first('capacity');
             $formFields['available_seats'] = $capacity->capacity;
 
@@ -64,6 +66,8 @@ class ShowsController extends Controller
            // $formFields['available_seats'] = Theatre::where('id','theatre_id')->get('capacity');
            $capacity =Theatre::where('id',$request->theatre_id)->first('capacity');
            $formFields['available_seats'] = $capacity->capacity;
+
+           $formFields['status'] = $request->status == 'on' ? 1 : 0;
 
             $show->update($formFields );
         //session()->flash('success', 'Shows    created successfully');

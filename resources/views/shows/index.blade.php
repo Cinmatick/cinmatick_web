@@ -20,6 +20,7 @@
                     <th>Id</th>
                     <th>Movie </th>
                     <th>Theatre </th>
+                    <th>Status</th>
                     <th>Price</th>
                     <th>Time</th>
                     <th>Show Date</th>
@@ -41,6 +42,7 @@
                             <td>{{$show->id}}</td>
                             <td>{{$show->movie->name}}</td>
                             <td>{{$show->theatre->name}}</td>
+                            <td>{{$show->status}}</td>
                             <td>{{$show->price}}</td>
                             <td>{{$show->time}}</td>
                             <td>{{$show->date}}</td>

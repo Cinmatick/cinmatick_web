@@ -1,9 +1,10 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
+            
         </x-slot>
 
         <form method="POST" action="{{ route('register') }}">
@@ -21,6 +22,12 @@
                 <x-input-label for="email" :value="__('Email')" />
                 <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
+            <!-- Phone -->
+            <div class="mt-4">
+                <x-input-label for="phone_no" :value="__('Phone Number')" />
+                <x-text-input id="phone_no" class="block mt-1 w-full" type="tel" name="phone_no" :value="old('phone_no')" required />
+                <x-input-error :messages="$errors->get('phone_no')" class="mt-2" />
             </div>
 
             <!-- Password -->
