@@ -18,15 +18,10 @@
                 <tr>
 
                     <th>Id</th>
-                    <th>Movie </th>
-                    <th>Theatre </th>
-                    <th>Price</th>
-                    <th>Time</th>
-                    <th>Show Date</th>
-                    <th>Available Seats</th>
-                    <th>Created Date</th>
-                    <th>Upadated Date</th>
-                    <th>Actions</th>
+                    <th>name </th>
+                    <th>email </th>
+                    <th>Phone</th>
+
 
 
 
@@ -34,33 +29,14 @@
             </thead>
 
             <tbody>
-                @unless(count($shows) == 0)
-                    @foreach ($shows as $show)
+                @unless(count($users) == 0)
+                    @foreach ($users as $user)
                         <tr>
 
-                            <td>{{$show->id}}</td>
-                            <td>{{$show->movie->name}}</td>
-                            <td>{{$show->theatre->name}}</td>
-                            <td>{{$show->price}}</td>
-                            <td>{{$show->time}}</td>
-                            <td>{{$show->date}}</td>
-                            <td>{{$show->available_seats}}</td>
-                            <td>{{$show->created_at}}</td>
-                            <td>{{$show->updated_at}}</td>
-                            <td class="p-2">
-                                <a href="/shows/{{ $show->id}}/edit" class="btn btn-outline-info btn-sm ">
-                                   <i class="fa fa-edit"></i>Edit
-                               </a>
-                               <form action="/shows/{{$show->id}}" class="d-inline" method="POST">
-                                   @csrf
-                                   @method('DELETE')
-                                   <button type="submit" class="btn btn-outline-danger btn-sm">
-                                       <i class="fa fa-trash"></i>Delete
-                                   </button>
-                               </form>
-                            </td>
-
-                        </tr>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
+                            <td>{{$user->phone_no}}</td>
+                           
                     @endforeach
                 @else
                 <tr>
