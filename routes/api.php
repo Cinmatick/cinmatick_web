@@ -31,7 +31,7 @@ Route::post('/logout',  [AuthController::class,  'logout'])->middleware('auth:sa
 Route::middleware('auth:sanctum')->group(function(){
     Route::get('home', [HomeController::class, 'index']);
     Route::get('shows', [ShowsController::class, 'index']);
-    Route::get('/shows/search/{name}', [ShowsController::class, 'search']);
+    Route::get('/shows/search', [ShowsController::class, 'search']);
 
 });
 

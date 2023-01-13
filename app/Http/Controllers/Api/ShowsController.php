@@ -22,11 +22,12 @@ class ShowsController extends Controller
 
 
     // Search for a movie
-    public function search($name)
+    public function search(Request $request)
     {
-       // return Shows::with('movie', 'theatre')->where('name', 'like', '%' .$name. '%')->get();
        return response()->json([
-        'shows' => Shows::with('movie', 'theatre')->where('', 'like', '%' .$name. '%')->get(),
+        'shows' => Movie::where('name', 'like', '%'. $request->input('q').'%')->whereHas('show', function($query){
+            $query->where('status', 1);
+        })->paginate()
        ]);
     }
 }
