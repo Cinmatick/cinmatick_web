@@ -130,6 +130,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Registered Users
                             </a>
+                            <a class="nav-link" href="/home">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Download
+                            </a>
 
 
                         </div>

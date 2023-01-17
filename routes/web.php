@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LandingPageController;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
@@ -73,6 +74,7 @@ Route::get('/users',[UserController::class, 'index'])->middleware(['auth', 'veri
 
 //route for categories
 Route::resource('categories', CategoryController::class)->middleware('auth');
+Route::resource('home', LandingPageController::class);
 
 
 

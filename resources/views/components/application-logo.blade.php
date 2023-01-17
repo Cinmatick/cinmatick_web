@@ -1,1 +1,1 @@
-<img src="{{asset('assets/logo.png')}}" alt="" width="100px" height="auto">
+<img src="{{asset('assets/logo.png')}}" alt="Golden Screen" width="100px" height="auto">
