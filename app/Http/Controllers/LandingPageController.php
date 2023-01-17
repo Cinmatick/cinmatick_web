@@ -14,4 +14,8 @@ class LandingPageController extends Controller
         return view('landingPage.download');
 
     }
+     public function about() {
+        return view('landingPage.about');
+
+     }
 }

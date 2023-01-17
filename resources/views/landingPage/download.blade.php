@@ -4,7 +4,7 @@
         <img src="{{asset('assets/logo.png')}}" width="300" height="auto" class=" mx-auto d-block" alt="logo">
 
     </a>
-        <div class="row p-5 bg-dark" >
+        <div class="row p-5 mt-5 bg-dark" >
 
           <div class="col-12 col-md-6 text-center bg-dark p-5">
             <div class="  text-center">

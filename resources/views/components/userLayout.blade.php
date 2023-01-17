@@ -29,7 +29,7 @@
     <nav class=" navbar navbar-expand-lg navbar-dark ">
         <!-- Navbar Brand-->
 
-        <div class="container px-2 px-lg-2">
+        <div class="container-fluid px-2 px-lg-2">
             <a class="navbar-brand" href="/home">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
             </a>
@@ -42,7 +42,6 @@
                 <ul class="navbar-nav ms-auto py-4 py-lg-0  ">
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 " href="/home">Home</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/home/about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/home/about">Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 bg-warning rounded rounded-4"
                             href="/home/download">Download App</a></li>
 

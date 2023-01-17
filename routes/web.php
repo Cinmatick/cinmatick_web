@@ -74,7 +74,9 @@ Route::get('/users',[UserController::class, 'index'])->middleware(['auth', 'veri
 
 //route for categories
 Route::resource('categories', CategoryController::class)->middleware('auth');
-Route::resource('home', LandingPageController::class);
+Route::get('home', [LandingPageController::class,'index']);
+Route::get('/home/about', [LandingPageController::class, 'about']);
+Route::get('/home/download', [LandingPageController::class, 'show']);
 
 
 
