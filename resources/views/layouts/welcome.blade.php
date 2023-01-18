@@ -30,7 +30,7 @@
 
 
          <!-- content of the page-->
-         <div class="bg-dark text-white">
+         <div class="bg-dark text-white ">
             @yield('content')
          </div>
 
@@ -71,8 +71,8 @@
                 </div>
             </div>
         </footer> --}}
-        
-        <footer class="py-4 bg-dark mt-auto footer">
+
+        <footer class="py-4 bg-dark mt-auto footer fixed-bottom">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">
                     <div class="text-muted">Copyright &copy; {{ config('app.name') }} 2023</div>
