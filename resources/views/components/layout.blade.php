@@ -56,7 +56,7 @@
             </form> --}}
 
 
-            <div class="mt-3 space-y-1 fixed top-0 right-0 ">
+            <div class="mt-3 space-y-1 fixed top-0 right-0 text-white ">
 
 
                 <!-- Authentication -->
