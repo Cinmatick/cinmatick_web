@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\Api\ShowsController;
-use App\Http\Controllers\Api\HomeController;
-use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\ShowsController;
+use App\Http\Controllers\Auth\CodeCheckController;
+use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
 /*
@@ -26,6 +29,13 @@ Route::post('/login', [AuthController::class, 'login']);
 
 
 Route::post('/logout',  [AuthController::class,  'logout'])->middleware('auth:sanctum');
+
+//Password reset routes
+
+Route::post('password/email',  ForgotPasswordController::class);
+Route::post('password/code/check', CodeCheckController::class);
+Route::post('password/reset', ResetPasswordController::class);
+
 
 
 Route::middleware('auth:sanctum')->group(function(){
