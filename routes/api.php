@@ -1,7 +1,12 @@
 <?php
 
+use App\Http\Controllers\Api\BookingController;
+use App\Http\Controllers\Api\ShowsController;
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +19,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+// Public routes
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+
+Route::post('/logout',  [AuthController::class,  'logout'])->middleware('auth:sanctum');
+
+
+Route::middleware('auth:sanctum')->group(function(){
+    Route::get('home', [HomeController::class, 'index']);
+    Route::get('shows', [ShowsController::class, 'index']);
+    Route::get('/shows/search', [ShowsController::class, 'search']);
+    Route::post('/bookShow', [BookingController::class, 'store']);
+    Route::get('/bookedShows', [BookingController::class, 'index']);
+
 });
+
+
+
