@@ -1,7 +1,7 @@
 <x-userLayout>
     <div class="container p4 bg-dark">
         <h1>CONTACT US</h1>
-        <p> <i class="fa-regular fa-house"></i> Cinmatick Solutions, Asaba, Delta State <br>
+        <p> Cinmatick Solutions, Asaba, Delta State <br>
             +234 816 162 4478, +234 810 008 0928, +234 811 561 5142, +234 814 555 8421.</p>
             <p>
                 We at Cinmatick Solutions, value our guest’s opinion so if you have any comments or suggestions, we are always happy to hear from you to enable us serve you better. We will attend to all matters related to the following:
