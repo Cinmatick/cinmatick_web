@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
@@ -16,6 +17,7 @@ class AuthController extends Controller
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed',
             'phone_no' => 'required|unique:users'
+
         ]);
 
         $user = User::create([
@@ -23,7 +25,9 @@ class AuthController extends Controller
             'email' => $fields ['email'],
             'password' => bcrypt($fields['password']),
             'phone_no' => $fields['phone_no'],
-            'is_admin' => 0
+            'is_admin' => 0,
+            'reset_token'=>Str::random(4)
+
         ]);
 
         $token = $user->createToken('myapptoken')->plainTextToken;
@@ -47,7 +51,7 @@ class AuthController extends Controller
 
         // Check password
         if(!$user || !Hash::check($fields['password'], $user->password)) {
-            return response([ 
+            return response([
                 'message' => 'Wrong Credentials'
             ], 401);
         }
@@ -60,7 +64,7 @@ class AuthController extends Controller
         ];
 
         return response($response, 201);
-    } 
+    }
 
     public function logout(Request $request) {
         $user = User::findOrFail(auth()->user()->id);
