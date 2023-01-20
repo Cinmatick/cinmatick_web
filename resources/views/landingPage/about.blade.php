@@ -14,8 +14,8 @@
                 <div >
 
                     <h1>COMPANY</h1>
-                    <a href="http://"><h6>About us</h6></a>
-                    <a href="http://"><h6>Ticket price</h6></a>
+                    <a href="http:/about/main"><h6>About us</h6></a>
+                    <a href="http:/about/booking"><h6>Ticket price</h6></a>
 
 
 
@@ -24,9 +24,9 @@
             <div class="col-12 col-md-4 text-start bg-dark p-5">
                 <div >
                     <h1>TERMS</h1>
-                    <a href="http://"><h6>General</h6></a>
-                    <a href="http://"><h6>Ticket booking </h6></a>
-                    <a href="http://"><h6>Experience</h6></a>
+                    <a href="http:/about/contact"><h6>General</h6></a>
+                    <a href="http:/about/booking"><h6>Ticket booking </h6></a>
+                    <a href="http:/about/contact"><h6>Experience</h6></a>
 
 
 
@@ -35,9 +35,9 @@
             <div class="col-12 col-md-4 text-start bg-dark p-5">
                 <div >
                     <h1>CONTACT</h1>
-                    <a href="http://"> <h6>Contact us</h6></a>
-                    <a href="http://"><h6>Help desk</h6></a>
-                    <a href="http://"> <h6>Patnership</h6></a>
+                    <a href="http:/about/contact"> <h6>Contact us</h6></a>
+                    <a href="http:/about/contact"><h6>Help desk</h6></a>
+                    <a href="http:/about/contact"> <h6>Patnership</h6></a>
 
 
 
