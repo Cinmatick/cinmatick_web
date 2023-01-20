@@ -3,7 +3,10 @@
     <div>
 
         <div  class=" fixed-top items-top justify-center   sm:items-center py-4 sm:pt-0">
-            <a class="navbar-brand" href="/">{{ config('app.name') }}</a>
+            {{-- <a class="navbar-brand" href="/">{{ config('app.name') }}</a> --}}
+            <a class="navbar-brand mb-5 mt-0 " href="/admin">
+                <x-application-logo class="fill-current" />
+            </a>
             @if (Route::has('login'))
                 <div id="nav" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
@@ -77,7 +80,7 @@
                         <span class="visually-hidden">Next</span>
                     </button>
                 </div>
-                
+
             </div>
 
         </div>

@@ -20,7 +20,7 @@
                         <th>Id</th>
                         <th>Reference</th>
                         <th>Show id</th>
-                        <th>User id</th>
+                        <th>User </th>
                         <th>Number of Seats</th>
                         <th>Date </th>
 
@@ -36,8 +36,8 @@
 
                                 <td>{{$booking->id}}</td>
                                 <td>{{$booking->reference}}</td>
-                                <td>{{$booking->shows_id}}</td>
-                                <td>{{$booking->users_id}}</td>
+                                <td>{{$booking->show_id}}</td>
+                                <td>{{$booking->user->name}}</td>
                                 <td>{{$booking->number_of_seats}}</td>
                                 <td>{{$booking->created_at}}</td>
 

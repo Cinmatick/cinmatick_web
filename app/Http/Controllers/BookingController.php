@@ -10,7 +10,7 @@ class BookingController extends Controller
      //show all bookings
      public function index() {
         return view('bookings.index',[
-            'bookings' => Bookings::all()
+            'bookings' => Bookings::with('show', 'user')->get()
         ]);
     }
     //show create bookings form

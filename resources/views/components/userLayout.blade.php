@@ -25,25 +25,21 @@
 
 </head>
 
-<body class="container-fluid  bg-dark text-white">
-    <nav class=" navbar navbar-expand-lg navbar-dark ">
+<body class=" container-fluid-md   bg-dark text-white">
+    <nav class=" navbar navbar-expand navbar-dark ">
         <!-- Navbar Brand-->
 
         <div class="container-fluid px-2 px-lg-2">
-            <a class="navbar-brand" href="/home">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a class="navbar-brand" href="/">
+                <x-application-logo class="  fill-current " />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto py-4 py-lg-0  ">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 " href="/home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/home/about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4 bg-warning rounded rounded-4"
-                            href="/home/download">Download App</a></li>
+
+            <div  >
+                <ul class="navbar-nav  py-2   ">
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-3 " href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-3" href="/about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-2 py-lg-3 bg-warning rounded rounded-4"
+                            href="/download">Download App</a></li>
 
                 </ul>
             </div>
@@ -57,11 +53,11 @@
 
         </div>
     </main>
-    <footer class="py-4 bg-dark mt-auto fixed-bottom ">
+    <footer class="py-4 bg-dark mt-1 fixed-bottom ">
         <div class="container-fluid px-4">
-            <div class="d-flex align-items-center justify-content-between small">
-                <div class="text-muted">Copyright &copy; Golden Screen 2023</div>
-                <div>
+            <div class="d-flex align-items-center  justify-content-between small">
+                <div class="text-muted text-center">Copyright &copy; Golden Screen 2023</div>
+                <div class="d-block-md d-none" >
                     <a href="#">Privacy Policy</a>
                     &middot;
                     <a href="#">Terms &amp; Conditions</a>

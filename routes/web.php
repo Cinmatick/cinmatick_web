@@ -30,7 +30,7 @@ use App\Http\Controllers\UserController;
 //update-- update listing
 // destroy -- delete listing
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('index');
 });
 // route for movies view
@@ -74,9 +74,9 @@ Route::get('/users',[UserController::class, 'index'])->middleware(['auth', 'veri
 
 //route for categories
 Route::resource('categories', CategoryController::class)->middleware('auth');
-Route::get('home', [LandingPageController::class,'index']);
-Route::get('/home/about', [LandingPageController::class, 'about']);
-Route::get('/home/download', [LandingPageController::class, 'show']);
+Route::get('/', [LandingPageController::class,'index']);
+Route::get('/about', [LandingPageController::class, 'about']);
+Route::get('/download', [LandingPageController::class, 'show']);
 
 
 

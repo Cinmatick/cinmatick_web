@@ -53,9 +53,9 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-        <div class=" text-center mt-5 ">
-            <a href="/home/download" class="w-20 h-20 ">
-                <img src="{{ asset('assets/download.png') }}"width="300" height="auto" class="mx-auto d-block"
+        <div class=" text-center m-4 ">
+            <a href="/download" class="w-20 h-20 ">
+                <img src="{{ asset('assets/download.png') }}"width="200" height="auto" class="mx-auto d-block"
                     alt="Apple Store">
             </a>
 
