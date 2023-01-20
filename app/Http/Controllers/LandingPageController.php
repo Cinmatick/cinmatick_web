@@ -18,4 +18,16 @@ class LandingPageController extends Controller
         return view('landingPage.about');
 
      }
+     public function aboutmain() {
+        return view('landingPage.aboutmain');
+
+     }
+     public function contact() {
+        return view('landingPage.contact');
+
+     }
+     public function booking() {
+        return view('landingPage.bookings');
+
+     }
 }

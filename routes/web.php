@@ -77,6 +77,9 @@ Route::resource('categories', CategoryController::class)->middleware('auth');
 Route::get('/', [LandingPageController::class,'index']);
 Route::get('/about', [LandingPageController::class, 'about']);
 Route::get('/download', [LandingPageController::class, 'show']);
+Route::get('/about/main', [LandingPageController::class, 'aboutmain']);
+Route::get('/about/contact', [LandingPageController::class, 'contact']);
+Route::get('/about/booking', [LandingPageController::class, 'booking']);
 
 
 
