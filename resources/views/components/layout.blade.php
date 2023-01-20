@@ -44,7 +44,10 @@
         </div> --}}
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="/dashboard">{{ config('app.name', 'Cinmatick') }}</a>
+            {{-- <a class="navbar-brand ps-3" href="/dashboard">{{ config('app.name', 'Cinmatick') }}</a> --}}
+            <a class="navbar-brand ps-3" href="/dashboard">
+                <x-application-logo class=" fill-current " />
+            </a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -130,7 +133,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Registered Users
                             </a>
-                            <a class="nav-link" href="/home">
+                            <a class="nav-link" href="/">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Download
                             </a>

@@ -12,28 +12,35 @@
 
             <div class="col-12 col-md-4 text-start  bg-dark p-5">
                 <div >
+
                     <h1>COMPANY</h1>
-                    <h4>About us</h4>
-                    <h4>Ticket price</h4>
-                    <h4>Experience</h4>
+                    <a href="http://"><h6>About us</h6></a>
+                    <a href="http://"><h6>Ticket price</h6></a>
+
+
 
                 </div>
             </div>
             <div class="col-12 col-md-4 text-start bg-dark p-5">
                 <div >
                     <h1>TERMS</h1>
-                    <h4>General</h4>
-                    <h4>Ticket booking and online booking</h4>
-                    <h4>Experience</h4>
+                    <a href="http://"><h6>General</h6></a>
+                    <a href="http://"><h6>Ticket booking </h6></a>
+                    <a href="http://"><h6>Experience</h6></a>
+
+
 
                 </div>
             </div>
             <div class="col-12 col-md-4 text-start bg-dark p-5">
                 <div >
                     <h1>CONTACT</h1>
-                    <h4>Contact us</h4>
-                    <h4>Help desk</h4>
-                    <h4>Patnership</h4>
+                    <a href="http://"> <h6>Contact us</h6></a>
+                    <a href="http://"><h6>Help desk</h6></a>
+                    <a href="http://"> <h6>Patnership</h6></a>
+
+
+
 
                 </div>
             </div>
