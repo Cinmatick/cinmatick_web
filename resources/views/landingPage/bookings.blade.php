@@ -7,13 +7,13 @@
             +234 816 162 4478, +234 810 008 0928, +234 811 561 5142, +234 814 555 8421.
 
         </p>
-        <p>Party Bookings
+        <p>  <h3>Party Bookings</h3>
 
             Give your children and their friends the treat of a lifetime on their birthdays. Ask at the box office and
             discover our surprise birthday package.
-            Group bookings
+
         </p>
-        <p>
+        <p> <h3>Group bookings</h3>
 
             Unbeatable prices starting from as low as N1,000, including free popcorn and drink and an unforgettable
             experience with friends at the cinemas. Make your bookings at the box office or
@@ -22,7 +22,7 @@
         </p>
         <p>
 
-            Advert bookings
+            <h3>Advert bookings</h3>
 
             Take advantage of the unique opportunity presented to your business to advertise in our weekly flyer and on
             our screens as we reach out to your target audience all at once.

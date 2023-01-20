@@ -48,10 +48,10 @@ Route::middleware('auth:sanctum')->group(function(){
 
 });
 
-    Route::post(
-        '/register',
-        [App\Http\Controllers\AuthController::class, 'register']
-    )->name('register');
+    // Route::post(
+    //     '/register',
+    //     [App\Http\Controllers\AuthController::class, 'register']
+    // )->name('register');
 
     Route::match(
         ['get', 'post'],
