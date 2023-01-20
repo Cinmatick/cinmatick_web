@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\BookingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -42,6 +43,8 @@ Route::middleware('auth:sanctum')->group(function(){
     Route::get('home', [HomeController::class, 'index']);
     Route::get('shows', [ShowsController::class, 'index']);
     Route::get('/shows/search', [ShowsController::class, 'search']);
+    Route::post('/bookShow', [BookingController::class, 'store']);
+    Route::get('/bookedShows', [BookingController::class, 'index']);
 
 });
 

@@ -43,8 +43,6 @@ class MovieController extends Controller
         };
 
 
-
-
         Movie::create(
 
             $formFields
