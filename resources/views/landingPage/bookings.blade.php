@@ -190,7 +190,7 @@
                                                                     </p>
 
                                                                     <p>
-                                                                        <label>Telephone (required)
+                                                                        <label>Phone No. (required)
                                                                             <br>
                                                                             <span class="wpcf7-form-control-wrap"
                                                                                 data-name="Telephone"><input
