@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\BookingController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LandingPageController;
 use App\Models\Movie;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MovieController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ShowsController;
-use App\Http\Controllers\TheatreController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\ShowsController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TheatreController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,8 @@ Route::delete('/shows/{show}',[ShowsController::class, 'destroy'])->middleware([
 
 // route for Bookings view
 Route::get('/bookings',[BookingController::class, 'index'])->middleware(['auth', 'verified']);
+Route::get('/reviews',[ReviewController::class, 'index'])->middleware(['auth', 'verified']);
+Route::post('/reviews/store',[ReviewController::class, 'store']);
 Route::get('/users',[UserController::class, 'index'])->middleware(['auth', 'verified']);
 
 //route for categories

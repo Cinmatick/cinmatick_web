@@ -108,12 +108,9 @@
                                                                                 aria-atomic="true"></p>
                                                                             <ul></ul>
                                                                         </div>
-
-                                                                        <form action="/bookings/#wpcf7-f7-p428-o1"
-                                                                            method="post"
-                                                                            class="wpcf7-form init mt-5 mb-4"
-                                                                            aria-label="Contact form"
-                                                                            novalidate="novalidate" data-status="init">
+                                                                        <x-flash-message/>
+                                                                        <form action="/reviews/store" method="post" enctype="multipart/form-data">
+                                                                            @csrf
                                                                             <div style="display: none;">
                                                                                 <input type="hidden" name="_wpcf7"
                                                                                     value="7">
@@ -137,14 +134,14 @@
                                                                                     <br>
                                                                                     <span
                                                                                         class="wpcf7-form-control-wrap"
-                                                                                        data-name="your-name"><input
+                                                                                        data-name="name"><input
                                                                                             size="40"
                                                                                             class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
                                                                                             aria-required="true"
                                                                                             aria-invalid="false"
                                                                                             value=""
                                                                                             type="text"
-                                                                                            name="your-name">
+                                                                                            name="name">
                                                                                     </span>
                                                                                 </label>
                                                                             </p>
@@ -154,14 +151,14 @@
                                                                                     <br>
                                                                                     <span
                                                                                         class="wpcf7-form-control-wrap"
-                                                                                        data-name="your-email"><input
+                                                                                        data-name="email"><input
                                                                                             size="40"
                                                                                             class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email"
                                                                                             aria-required="true"
                                                                                             aria-invalid="false"
                                                                                             value=""
                                                                                             type="email"
-                                                                                            name="your-email">
+                                                                                            name="email">
                                                                                     </span>
                                                                                 </label>
                                                                             </p>
@@ -171,13 +168,13 @@
                                                                                     <br>
                                                                                     <span
                                                                                         class="wpcf7-form-control-wrap"
-                                                                                        data-name="your-subject"><input
+                                                                                        data-name="subject"><input
                                                                                             size="40"
                                                                                             class="wpcf7-form-control wpcf7-text"
                                                                                             aria-invalid="false"
                                                                                             value=""
                                                                                             type="text"
-                                                                                            name="your-subject">
+                                                                                            name="subject">
                                                                                     </span>
                                                                                 </label>
                                                                             </p>
@@ -187,14 +184,14 @@
                                                                                     <br>
                                                                                     <span
                                                                                         class="wpcf7-form-control-wrap"
-                                                                                        data-name="Telephone"><input
+                                                                                        data-name="phone"><input
                                                                                             size="40"
                                                                                             class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel"
                                                                                             aria-required="true"
                                                                                             aria-invalid="false"
                                                                                             value=""
                                                                                             type="tel"
-                                                                                            name="Telephone">
+                                                                                            name="phone">
                                                                                     </span>
                                                                                     <br>
                                                                                 </label>
@@ -203,9 +200,9 @@
                                                                                     <br>
                                                                                     <span
                                                                                         class="wpcf7-form-control-wrap"
-                                                                                        data-name="your-message">
+                                                                                        data-name="comment">
                                                                                         <textarea cols="38" rows="10" class="wpcf7-form-control wpcf7-textarea mb-2" aria-invalid="false"
-                                                                                            name="your-message"></textarea>
+                                                                                            name="comment"></textarea>
                                                                                     </span>
                                                                                 </label>
                                                                             </p>
