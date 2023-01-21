@@ -1,17 +1,30 @@
 <x-userLayout>
     <div class="container p4 bg-dark">
-        <h1>ABOUT US</h1>
-        <p>
-            Cinmatick Solution's Golden Screen is a cinema Located in a cool conducive and classy environment in Asaba, Delta State, with state of the art equipment, highly innovative young team with focus on customer satisfaction. The cinema has carved a niche for itself by providing impressive brand experience that is beyond film exhibition to its constantly growing audience.
+        <h1>
+            <strong>About Us</strong>
+        </h1>
 
-            Cinmatick Solutions is a company established in the last quarter of 2022 by seventeen (17) Tech Students from a variety of tech areas ranging from UI/UX Design, Web Development and Mobile App Development. Cinmatick Solutions commenced its exhibition business and operation on Monday 21st January, 2023. It has 4 screens with 1500 seats.
+        <p style="text-align: justify;"> Cinmatick Solutions is a team of ingenious tech students with our product Golden
+            Screen which is a cinema ticketing app. We are a youthful, highly creative team
+            that focuses on creating products that are user-friendly and satisfy customers'
+            expectations. We developed this solution using cutting-edge technology in a
+            cool, welcoming, and elegant setting in the Delta State Innovation Hub in Asaba.
+            Golden Screen has established a place for itself by offering its steadily
+            growing user base an outstanding customer experience that goes beyond movie
+            screenings.
 
-            Cinmatick Solution's Golden Screen is the first cinema to be built in Asaba by a group of Tech Students and enthusiasts; it is the culmination of some months of teaching and research as the Cinmatick Solution built Golden Screen is the end product or the result of the capsule project carried out by the team/group.
+            <br>
 
-            Designed to standards with perfect acoustics, each auditorium is equipped with state-of-the art digital projection. Every performance promises to deliver an unparalleled experience in filmed entertainment.
-
-            Our cinema stand offers freshly made savoury pop-corn, ice-cold drinks and a variety of delicious snacks, all served with dedication. Service delivery is constantly monitored and bench-marked against the global acceptable standards. Our Film selection is the very best the industry has to offer, in partnership with distributors representing major studios in Hollywood, Nigeria and India.
-
-            We are poised in giving you an experience to remember.</p>
+            Cinmatick Solutions is a company founded in the fourth quarter of 2022 by
+            seventeen (17) tech students with backgrounds in UI/UX design, Web development,
+            and Mobile app development. As our capstone project, Golden Screen is the
+            culmination of several months of training and research. Every screen of the app
+            offers a superior movie pleasure and ticketing experience. In collaboration with
+            distributors who represent major studios in Hollywood, Nollywood, Bollywood,
+            etc., we offer the best selection of movies the market has to offer.
+            We are inclined to provide you with an experience that will make you want to
+            return for more.
+        </p>
     </div>
+
 </x-userLayout>
