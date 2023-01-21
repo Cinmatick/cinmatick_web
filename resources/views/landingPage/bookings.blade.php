@@ -215,7 +215,7 @@
                                                                         aria-hidden="true">
                                                                     </div>
 
-                                                                    <p class="mb-2">
+                                                                    <p class="mb-5">
                                                                         <input class="wpcf7-form-control has-spinner wpcf7-submit" type="submit" value="Send">
                                                                         <span class="wpcf7-spinner">
 
