@@ -17,7 +17,7 @@
 
             Cinmatick Solutions is a company founded in the fourth quarter of 2022 by
             seventeen (17) tech students with backgrounds in UI/UX design, Web development,
-            and Mobile app development. As our capstone project, Golden Screen is the
+            and Mobile App Development. As our capstone project, Golden Screen is the
             culmination of several months of training and research. Every screen of the app
             offers a superior movie pleasure and ticketing experience. In collaboration with
             distributors who represent major studios in Hollywood, Nollywood, Bollywood,
