@@ -137,6 +137,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Download
                             </a>
+                            <a class="nav-link" href="/reviews">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Reviews
+                            </a>
 
 
                         </div>
