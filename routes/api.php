@@ -40,8 +40,8 @@ Route::post('password/reset', ResetPasswordController::class);
 
 
 Route::middleware('auth:sanctum')->group(function(){
-    Route::get('home', [HomeController::class, 'index']);
-    Route::get('shows', [ShowsController::class, 'index']);
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/shows', [ShowsController::class, 'index']);
     Route::get('/shows/search', [ShowsController::class, 'search']);
     Route::post('/bookShow', [BookingController::class, 'store']);
     Route::get('/bookedShows', [BookingController::class, 'index']);
@@ -53,11 +53,11 @@ Route::middleware('auth:sanctum')->group(function(){
     //     [App\Http\Controllers\AuthController::class, 'register']
     // )->name('register');
 
-    Route::match(
-        ['get', 'post'],
-        '/login',
-        [App\Http\Controllers\AuthController::class, 'login']
-    )->name('login');
+    // Route::match(
+    //     ['get', 'post'],
+    //     '/login',
+    //     [App\Http\Controllers\AuthController::class, 'login']
+    // )->name('login');
 
     Route::post(
         '/resend/email/token',
