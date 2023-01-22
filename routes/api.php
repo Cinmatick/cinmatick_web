@@ -39,56 +39,49 @@ Route::post('password/reset', ResetPasswordController::class);
 
 
 
-Route::middleware('auth:sanctum')->group(function(){
-    Route::get('home', [HomeController::class, 'index']);
-    Route::get('shows', [ShowsController::class, 'index']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/home', [HomeController::class, 'index']);
+    Route::get('/shows', [ShowsController::class, 'index']);
     Route::get('/shows/search', [ShowsController::class, 'search']);
     Route::post('/bookShow', [BookingController::class, 'store']);
     Route::get('/bookedShows', [BookingController::class, 'index']);
-
 });
 
-    // Route::post(
-    //     '/register',
-    //     [App\Http\Controllers\AuthController::class, 'register']
-    // )->name('register');
+// Route::post(
+//     '/register',
+//     [App\Http\Controllers\AuthController::class, 'register']
+// )->name('register');
 
-    Route::match(
-        ['get', 'post'],
-        '/login',
-        [App\Http\Controllers\AuthController::class, 'login']
-    )->name('login');
+// Route::match(
+//     ['get', 'post'],
+//     '/login',
+//     [App\Http\Controllers\AuthController::class, 'login']
+// )->name('login');
 
-    Route::post(
-        '/resend/email/token',
-        [App\Http\Controllers\RegisterController::class, 'resendPin']
-    )->name('resendPin');
+Route::post(
+    '/resend/email/token',
+    [App\Http\Controllers\RegisterController::class, 'resendPin']
+)->name('resendPin');
 
-    Route::middleware('auth:sanctum')->group(function () {
-        Route::post(
-            'email/verify',
-            [App\Http\Controllers\RegisterController::class, 'verifyEmail']
-        );
-        Route::middleware('verify.api')->group(function () {
-            Route::post(
-                '/logout',
-                [App\Http\Controllers\LoginController::class, 'logout']
-            );
-        });
-    });
+// Route::middleware('auth:sanctum')->group(function () {
+//     Route::post('email/verify',[App\Http\Controllers\RegisterController::class, 'verifyEmail'] );
+//     // Route::middleware('verify.api')->group(function () {
+//     //     Route::post(
+//     //         '/logout',
+//     //         [App\Http\Controllers\LoginController::class, 'logout']
+//     //     );
+//     // });
+// });
 
-    Route::post(
-        '/forgot-password',
-        [App\Http\Controllers\ForgotPasswordController::class, 'forgotPassword']
-    );
-    Route::post(
-        '/verify/pin',
-        [App\Http\Controllers\ForgotPasswordController::class, 'verifyPin']
-    );
-    Route::post(
-        '/reset-password',
-        [App\Http\Controllers\ResetPasswordController::class, 'resetPassword']
-    );
-
-
-
+Route::post(
+    '/forgot-password',
+    [App\Http\Controllers\ForgotPasswordController::class, 'forgotPassword']
+);
+Route::post(
+    '/verify/pin',
+    [App\Http\Controllers\ForgotPasswordController::class, 'verifyPin']
+);
+Route::post(
+    '/reset-password',
+    [App\Http\Controllers\ResetPasswordController::class, 'resetPassword']
+);

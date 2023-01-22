@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+//use Illuminate\Routing\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -67,10 +69,15 @@ class AuthController extends Controller
     }
 
     public function logout(Request $request) {
-        $user = User::findOrFail(auth()->user()->id);
-        $user->tokens()->delete();
-        return response()->json([
+         $user = User::findOrFail(auth()->user()->id);
+         $user->tokens()->delete();
+         return response()->json([
             'message' => 'Logged out'
-        ]);
+         ]);
+        // auth()->user()->tokens()->delete();
+        // return [
+        //     'message' => 'Logged out'
+        // ];
+
     }
 }
