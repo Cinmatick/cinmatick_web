@@ -38,7 +38,7 @@ class BookingController extends Controller
 
         Bookings::create($data);
 
-
+ 
 
         $show->decrement('available_seats', $request->input('number_of_seats'));
 
