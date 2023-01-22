@@ -25,9 +25,9 @@ class ShowsController extends Controller
     public function search(Request $request)
     {
        return response()->json([
-        'shows' => Movie::where('name', 'like', '%'. $request->input('q').'%')->whereHas('show', function($query){
+        'shows' => Movie::where('name', 'like', '%'. $request->input('q').'%')->with('show')->whereHas('show', function($query){
             $query->where('status', 1);
-        })->paginate()
+        })->get()
        ]);
     }
 }

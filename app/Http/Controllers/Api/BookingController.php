@@ -36,11 +36,16 @@ class BookingController extends Controller
         $show = Shows::findOrFail($request->input('show_id'));
 
 
-        Bookings::create($data);
+        $booking = Bookings::create($data);
 
  
 
         $show->decrement('available_seats', $request->input('number_of_seats'));
+        return response()->json([
+            'status' => true,
+            'booking' => $booking,
+            'message' =>'Booked successfully'
+        ]);
 
     }
 }
