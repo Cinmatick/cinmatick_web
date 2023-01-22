@@ -68,7 +68,7 @@ class AuthController extends Controller
         return response($response, 201);
     }
 
-    public function logout(Request $request) {
+    public function destroy(Request $request) {
          $user = User::findOrFail(auth()->user()->id);
          $user->tokens()->delete();
          return response()->json([
