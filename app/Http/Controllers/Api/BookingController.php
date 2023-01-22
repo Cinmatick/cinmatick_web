@@ -26,7 +26,7 @@ class BookingController extends Controller
             'show_id' => 'required'
         ]);
 
-        $uniqid = Str::random(9);
+        $uniqid = Str::random(9); 
         $formFields['reference'] = $uniqid;
 
 
