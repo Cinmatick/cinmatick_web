@@ -26,7 +26,7 @@ class BookingController extends Controller
             'show_id' => 'required'
         ]);
 
-        $uniqid = Str::random(9);
+        $uniqid = Str::random(9); 
         $formFields['reference'] = $uniqid;
 
 
@@ -38,7 +38,7 @@ class BookingController extends Controller
 
         Bookings::create($data);
 
-
+ 
 
         $show->decrement('available_seats', $request->input('number_of_seats'));
 
