@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 
 class ResetPassword extends Controller
 {
-    public function resetPassword(Request $request)
+    public function resetPass(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'email' => ['required', 'string', 'email', 'max:255'],
