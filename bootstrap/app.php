@@ -51,11 +51,11 @@ $app->singleton(
 | from the actual running of the application and sending responses.
 |
 */
-$app->withRouting(
-    web: __DIR__.'/../routes/web.php',
-    commands: __DIR__.'/../routes/console.php',
-    health: '/up',
-    //health: '/status',
-);
+// $app->withRouting(
+//     web: __DIR__.'/../routes/web.php',
+//     commands: __DIR__.'/../routes/console.php',
+//    // health: '/up',
+//     //health: '/status',
+// );
 
 return $app;
