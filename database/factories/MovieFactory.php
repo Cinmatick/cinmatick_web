@@ -18,14 +18,14 @@ class MovieFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->sentence(),
+            'name' => 'Things Fall apart',
             'category_id' => Category::factory(1)->create()[0]->id,
-            'video_url' => fake()->unique()->url(),
+            'video_url' => 'www.youtube.com/watch/things-fall-apart',
             'cast' => 'Vandan, Pete Edochie, Omotala',
             'status' => true,
             'trending' => true,
-            'released_date' => fake()->date(),
-            'description' => fake()->paragraph(2),
+            'released_date' => '12/12/2002',
+            'description' => 'Award winning movie of the year. ',
             'image' => 'images/movie1.png',
             'pg' => 'PG-18',
             'rating' => 5
