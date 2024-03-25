@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->sentence(),
+            'name' => 'Drama',
             'image' => 'images/movie1.png',
         ];
     }
