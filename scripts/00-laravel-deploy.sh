@@ -18,7 +18,7 @@ echo "Running migrations..."
 php artisan migrate --force
 
 echo "seeding database"
-php artisan db:seed
+php artisan db:seed --force
 
 #listing the existing routes
 echo "Running routes listing"
